@@ -5,6 +5,7 @@ app_name = 'myapp'
 
 urlpatterns = [
     path('', views.index, name='index'),  # 127.0.0.1:8000/myapp
+    path('reserve/', views.reserve, name='reserve'),
     #    path('about/', views.about, name='about'),
     #    path('info/', views.info, name='info'),
 ]

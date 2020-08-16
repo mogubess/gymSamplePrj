@@ -1,0 +1,41 @@
+{% extends 'myapp/base.html' %}
+{% block title %}予約{% endblock %}
+{% block content %}
+<!-- スタジオ選択リスト表示 -->
+<div class="form-group">
+    <label for="select1a">スタジオ:</label>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <select id="select1a" class="form-control" onChange="getSelectLabel('select1a')">
+        {% for studio in studio_list %}
+        <option value="{{ studio }}">{{ studio }}</optiion>
+            {% endfor %}
+    </select>
+</div>
+{% block extrajs %}
+<!-- <script>
+    var selectedValue = document.getElementById('select1a');
+    selectedValue.onchange = function () {
+        alert(this.selectedValue)
+    }
+</script> -->
+<script>
+    function getSelectLabel(idname) {
+        var obj = document.getElementById(idname);
+        var idx = obj.selectedIndex;       //インデックス番号を取得
+        var val = obj.options[idx].value;  //value値を取得
+        var txt = obj.options[idx].text;  //ラベルを取得
+
+        alert('選択したのは「インデックス:' + idx + ' 値:' + val + ' ラベル:' + txt + '」です');
+    }
+</script>
+{% endblock %}
+<!-- トレーナー選択リスト表示 -->
+{% for traner in traner_list %}
+{{ traner }}<br>
+{% endfor %}
+
+<!-- DatePickerから日付を選択 -->
+
+<!-- 上記の情報から予約可能時間をリストで選択できるようにする -->
+
+{% endblock %}

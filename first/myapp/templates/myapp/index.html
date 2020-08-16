@@ -1,6 +1,10 @@
 {% extends 'myapp/base.html' %}
 {% block title %}トップページ{% endblock %}
 {% block content %}
-<h1>Hello, {{name}}</h1>
+<h1>{{name}}様</h1>
+<h3>{{lastMonth}}月発行分の残り:{{remaining}}枚</h3>
 
+<!-- 現在の予約状況リスト -->
+
+<!-- 予約を追加するボタンの追加 -->
 {% endblock %}
